@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: sovannlyna-api-dev-new-k8s-deployment
+  labels:
+    app: sovannlyna-api-dev-new-k8s
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: sovannlyna-api-dev-new-k8s
+  template:
+    metadata:
+      labels:
+        app: sovannlyna-api-dev-new-k8s
+    spec:
+      containers:
+        - name: sovannlyna-api-dev-new-k8s-container
+          image: pipejet/sovannlyna-api-dev-new-k8s:0
+          ports:
+            - containerPort: 8080
