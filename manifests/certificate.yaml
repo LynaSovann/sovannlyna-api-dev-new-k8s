@@ -1,0 +1,13 @@
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: sovannlyna-api-dev-new-k8s-certificate
+  namespace: sovannlyna-api-dev-new-k8s
+spec:
+  secretName: sovannlyna-api-dev-new-k8s-secret-tls
+  commonName: sovannlyna-api-dev-new-k8s.assessify.org
+  dnsNames:
+  - sovannlyna-api-dev-new-k8s.assessify.org
+  issuerRef:
+    name: letsencrypt-prod
+    kind: ClusterIssuer
