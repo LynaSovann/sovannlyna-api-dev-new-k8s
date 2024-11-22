@@ -1,0 +1,26 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: sovannlyna-api-dev-new-k8s-https-ingress
+  namespace: sovannlyna-api-dev-new-k8s
+  annotations:
+    nginx.ingress.kubernetes.io/ssl-redirect: "false"
+    nginx.ingress.kubernetes.io/use-regex: "true"
+    nginx.ingress.kubernetes.io/rewrite-target: /
+spec:
+  ingressClassName: nginx
+  tls:
+    - hosts:
+        - sovannlyna-api-dev-new-k8s.assessify.org
+      secretName: sovannlyna-api-dev-new-k8s-secret-tls
+  rules:
+    - host: sovannlyna-api-dev-new-k8s.assessify.org
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: sovannlyna-api-dev-new-k8s-service
+                port:
+                  number: 8227
