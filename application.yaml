@@ -4,10 +4,11 @@ metadata:
   name: sovannlyna-api-dev-new-k8s
   namespace: argocd
   annotations:
-    notifications.argocd.argoproj.io/subscribe.on-sync-succeeded: "updateDeploymentStatusTrigger"
     notifications.argoproj.io/subscribe.on-sync-succeeded.telegram: "-1002195638358"
     notifications.argoproj.io/subscribe.on-sync-failed.telegram: "-1002195638358"
     notifications.argoproj.io/subscribe.on-deleted.telegram: "-1002195638358"
+    notifications.argoproj.io/subscribe.on-sync-succeeded.updateDeploymentStatusWebhook: ""
+    notifications.argoproj.io/subscribe.on-sync-succeeded.gmail: sovannlyna2004@gmail.com
   finalizers:
     - resources-finalizer.argocd.argoproj.io
 spec:
