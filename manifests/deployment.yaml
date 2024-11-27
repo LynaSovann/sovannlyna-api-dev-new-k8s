@@ -16,6 +16,6 @@ spec:
     spec:
       containers:
         - name: sovannlyna-api-dev-new-k8s-container
-          image: pipejet/sovannlyna-api-dev-new-k8s:38
+          image: pipejet/sovannlyna-api-dev-new-k8s:39
           ports:
             - containerPort: 8080
